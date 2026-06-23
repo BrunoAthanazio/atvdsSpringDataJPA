@@ -1,4 +1,4 @@
-package com.weg.atvdsSpringDataJPA.model.atividade1;
+package com.weg.atvdsSpringDataJPA.model.exercicio1;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -28,7 +28,7 @@ public class Documento {
 
     private String tipo;
 
-    @OneToOne(mappedBy = "documento", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "documento")
     private Pessoa pessoa;
 
     public Documento(String numero, String tipo) {
