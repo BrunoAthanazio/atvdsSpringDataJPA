@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.weg.atvdsSpringDataJPA.model.exercicio1.Documento;
 
 public interface DocumentoRepository extends JpaRepository<Documento, Long>{
-    public boolean existsByNumero(String numero);
+    boolean existsByNumero(String numero);
 }

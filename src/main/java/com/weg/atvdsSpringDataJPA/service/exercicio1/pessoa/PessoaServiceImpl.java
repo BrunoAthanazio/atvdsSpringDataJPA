@@ -21,8 +21,8 @@ public class PessoaServiceImpl implements PessoaService{
 
     @Override
     public PessoaResponseDto save(PessoaRequestDto dto) {
-        if(dto.documento() != null && documentoRepository.existsByNumero(dto.documento().numero())){
-            throw new RuntimeException("Documento já cadastrado");
+        if(documentoRepository.existsByNumero(dto.documento().numero()) || pessoaRepository.existsByNome(dto.nome())){
+            throw new RuntimeException("Pessoa já possui documento ou documento já foi cadastrado");
         }else{
             Pessoa pessoa = mapper.toEntity(dto);
             pessoaRepository.save(pessoa);

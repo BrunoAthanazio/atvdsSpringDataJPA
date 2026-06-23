@@ -1,11 +1,9 @@
 package com.weg.atvdsSpringDataJPA.model.exercicio1;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,9 +25,6 @@ public class Documento {
     private String numero;
 
     private String tipo;
-
-    @OneToOne(mappedBy = "documento")
-    private Pessoa pessoa;
 
     public Documento(String numero, String tipo) {
         this.numero = numero;
