@@ -1,5 +1,6 @@
 package com.weg.atvdsSpringDataJPA.model.exercicio2;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,7 +29,7 @@ public class Endereco {
     
     private int numero;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "funcionario_id")
     private Funcionario funcionario;
 }
