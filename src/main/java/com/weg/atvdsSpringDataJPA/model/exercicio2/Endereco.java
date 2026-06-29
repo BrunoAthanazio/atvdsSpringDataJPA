@@ -29,7 +29,12 @@ public class Endereco {
     
     private int numero;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "funcionario_id")
     private Funcionario funcionario;
+
+    public Endereco(String rua, int numero) {
+        this.rua = rua;
+        this.numero = numero;
+    }
 }

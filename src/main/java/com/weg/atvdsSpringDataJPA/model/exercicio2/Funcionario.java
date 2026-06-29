@@ -1,5 +1,6 @@
 package com.weg.atvdsSpringDataJPA.model.exercicio2;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,6 +26,11 @@ public class Funcionario {
 
     private String nome;
 
-    @OneToOne(mappedBy = "funcionario")
+    @OneToOne(mappedBy = "funcionario", cascade = CascadeType.ALL)
     private Endereco endereco;
+
+    public Funcionario(String nome, Endereco endereco) {
+        this.nome = nome;
+        this.endereco = endereco;
+    }
 }
